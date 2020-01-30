@@ -2,48 +2,14 @@
 // See the LICENSE file in the project root for more information.
 using System;
 
-namespace Tomas.Common
+
+namespace Tomas.Kernel
 {
     public class Terminal
     {
         const char SYMBOL = '$';
 
-        public static bool IsCancelKey
-        {
-            get
-            {
-                var keys = Console.ReadKey();
-                if (keys.Modifiers == ConsoleModifiers.Control &&
-                    keys.Key == ConsoleKey.C)
-                    return true;
-
-                return false;
-            }
-        }
-
-        public static bool IsHelpKey
-        {
-            get
-            {
-                var keys = Console.ReadKey();
-                if (keys.Modifiers == ConsoleModifiers.Control &&
-                    keys.Key == ConsoleKey.H)
-                    return true;
-
-                return false;
-            }
-        }
-
-        public static bool IsEscapeKey
-        {
-            get
-            {
-                if (Console.ReadKey().Key == ConsoleKey.Escape)
-                    return true;
-
-                return false;
-            }
-        }
+        public static TerminalCancelEventHandler CancelKeyHandler;
 
         static void Commands(string command)
         {

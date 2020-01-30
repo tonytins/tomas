@@ -1,6 +1,6 @@
 # TOMAS
 
-TOMAS, an abbreviation of **To**ny's **Ma**naged Operating **S**ystem is a operating system written in C# using the [COSMOS](https://github.com/CosmosOS/Cosmos) framework.
+TOMAS, an abbreviation of **To**ny's **Ma**naged Operating **S**ystem, is a operating system written in C# using the [COSMOS](https://github.com/CosmosOS/Cosmos) framework.
 
 ## Requirements
 
