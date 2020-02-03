@@ -12,17 +12,29 @@ namespace Tomas.Kernel
 
         protected override void BeforeRun()
         {
-            Console.WriteLine($"{OSConsts.Name} booted successfully. Type a line of text to get it echoed back.");
+            try
+            {
+                Sys.PCSpeaker.Beep();
+                TomFS.Initialize();
+            }
+            catch
+            {
+                Sys.PCSpeaker.Beep();
+                Console.WriteLine("File system failed to load! Not all functions will work.");
+            }
+
+
+            Console.WriteLine("Booted successfully. Type a line of text to get it echoed back.");
         }
 
         protected override void Run()
         {
-            var input = Terminal.ReadLine("1) Basic App");
+            var input = Terminal.ReadLine("1) About");
 
             switch (input.ToLowerInvariant())
             {
                 case "1":
-                    var basic = new BasicApp(this);
+                    var basic = new AboutApp(this);
                     basic.Start();
                     break;
                 default:
@@ -33,7 +45,7 @@ namespace Tomas.Kernel
         protected override void AfterRun()
         {
             if (!InApp)
-                Console.WriteLine($"{OSConsts.Name} is shutting down.");
+                Console.WriteLine($"{OSConsts.NAME} is shutting down.");
         }
     }
 }
