@@ -22,8 +22,10 @@ namespace Tomas.Kernel.Programs
         public virtual void Start()
         {
             System.InApp = true;
-            var isCKey = sys.KeyboardManager.ReadKey().Key == sys.ConsoleKeyEx.C;
-            if (sys.KeyboardManager.ControlPressed && isCKey)
+
+            var isRKey = sys.KeyboardManager.ReadKey().Key == sys.ConsoleKeyEx.R;
+
+            if (sys.KeyboardManager.ControlPressed && isRKey)
                 System.Restart();
         }
     }
