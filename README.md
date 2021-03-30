@@ -1,21 +1,19 @@
 # TOMAS
 
-TOMAS, an abbreviation of **To**ny's **Ma**naged Operating **S**ystem, is a operating system written in C# using the [COSMOS](https://github.com/CosmosOS/Cosmos) framework.
+TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework. It comes with a respective terminal emulator.
 
 ## Requirements
 
 ### Prerequisites
 
-- COSMOS User Kit v20190508+
-- VMWare Workstation Player
-- .NET Core 2.1+
-- Visual Studio 2019
+- TOMAS OS
+	- Visual Studio 2019
+	- COSMOS User Kit v20190508+
+	- VMWare Workstation Player
+- TOMAS Terminal Emulator and OS
+	- .NET Core 2.1 or later
 
-## Authors
 
-- **Anthony Foxclaw** - _Initial work_ - [tonytins](https://github.com/tonytins)
-
-See also the list of [contributors](https://github.com/tonytins/simtactics/contributors) who participated in this project.
 
 ## License
 

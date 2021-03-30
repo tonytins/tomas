@@ -1,15 +1,17 @@
 // TOMAS is licensed under the MPL 2.0 license.
 // See the LICENSE file in the project root for more information.
 using System;
+using System.Collections.Generic;
+using Tomas.Common;
+using Tomas.Interface.Shell;
 using Tomas.Kernel.Programs;
+using Tomas.Terminal.Programs;
 using Sys = Cosmos.System;
 
 namespace Tomas.Kernel
 {
     public class Kernel : Sys.Kernel
     {
-        public bool InApp { get; set; }
-
         protected override void BeforeRun()
         {
             try
@@ -29,23 +31,21 @@ namespace Tomas.Kernel
 
         protected override void Run()
         {
-            var input = Terminal.ReadLine("1) About");
-
-            switch (input.ToLowerInvariant())
+            while (true)
             {
-                case "1":
-                    var basic = new AboutApp(this);
-                    basic.Start();
-                    break;
-                default:
-                    break;
+                var shell = new Shell();
+                var command = shell.ReadLine;
+                OSConsts.Programs.TryGetValue(command, out var program);
+                var isRun = program.Start();
+
+                if (isRun) continue;
+                break;
             }
         }
 
         protected override void AfterRun()
         {
-            if (!InApp)
-                Console.WriteLine($"{OSConsts.NAME} is shutting down.");
+            Console.WriteLine($"{ComConsts.NAME} is shutting down.");
         }
     }
 }

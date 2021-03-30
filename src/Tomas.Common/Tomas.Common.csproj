@@ -4,4 +4,15 @@
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Tomas.Interface\Tomas.Interface.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="GitInfo" Version="2.1.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
 </Project>

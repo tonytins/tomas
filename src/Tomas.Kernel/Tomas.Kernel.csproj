@@ -37,6 +37,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Tomas.Common\Tomas.Common.csproj" />
+        <ProjectReference Include="..\Tomas.Interface\Tomas.Interface.csproj" />
     </ItemGroup>
 
 </Project>
