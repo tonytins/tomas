@@ -1,6 +1,5 @@
-// TOMAS is licensed under the MPL 2.0 license.
+// I license this project under the GPL 3.0 license.
 // See the LICENSE file in the project root for more information.
-
 using System.Collections.Generic;
 using Tomas.Interface.Shell;
 using Tomas.Kernel.Programs;

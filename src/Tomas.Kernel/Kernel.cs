@@ -1,4 +1,4 @@
-// TOMAS is licensed under the MPL 2.0 license.
+// I license this project under the GPL 3.0 license.
 // See the LICENSE file in the project root for more information.
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ namespace Tomas.Kernel
             }
 
 
-            Console.WriteLine("Booted successfully. Type a line of text to get it echoed back.");
+            Console.WriteLine($"{ComConsts.NAME} v{ComConsts.VersionGit} Booted successfully.");
         }
 
         protected override void Run()
