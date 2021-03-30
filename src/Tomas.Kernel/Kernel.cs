@@ -35,10 +35,16 @@ namespace Tomas.Kernel
             {
                 var shell = new Shell();
                 var command = shell.ReadLine;
-                OSConsts.Programs.TryGetValue(command, out var program);
-                var isRun = program.Start();
 
-                if (isRun) continue;
+                if (!OSConsts.Programs.TryGetValue(command, out var program))
+                {
+                    Console.WriteLine("Command Unknown.");
+                    continue;
+                }
+
+                var start = program.Start();
+                if (start) continue;
+
                 break;
             }
         }
