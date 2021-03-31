@@ -1,0 +1,28 @@
+name: .NET
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  push:
+    branches: [master, main, develop, "feature/**"]
+  pull_request:
+    branches: [master, main, develop, "feature/**"]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        dotnet: ["3.1.x", "5.0.x"]
+        os: [windows-latest, ubuntu-latest, macOS-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - name: Install dependencies
+        run: dotnet restore src/Tomas.Terminal
+      - name: Build
+        run: dotnet build src/Tomas.Terminal -c Release --no-restore

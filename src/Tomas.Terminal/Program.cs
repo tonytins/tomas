@@ -12,17 +12,30 @@ namespace Tomas.Terminal
             {
                 var shell = new Shell();
                 var command = shell.ReadLine;
+                var programs = shell.Programs;
 
-                if (!TermConsts.Programs.TryGetValue(command, out var program))
+                if (!programs.TryGetValue(command, out var program))
                 {
-                    Console.WriteLine("Command Unknown.");
+                    Console.WriteLine("Command Not Found.");
                     continue;
                 }
 
-                var start = program.Start();
-                if (start) continue;
-
-                break;
+                try
+                {
+                    var start = program.Run(shell);
+                    switch (start)
+                    {
+                        case true:
+                            continue;
+                        case false:
+                            Console.WriteLine("Program closed unexpectedly.");
+                            continue;
+                    }
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                }
             }
         }
     }

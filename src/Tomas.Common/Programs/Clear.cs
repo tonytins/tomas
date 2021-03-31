@@ -1,11 +1,11 @@
 using System;
-using Tomas.Interface.Shell;
+using Tomas.Interface;
 
-namespace Tomas.Kernel.Programs
+namespace Tomas.Common.Programs
 {
     public class Clear : IProgram
     {
-        public bool Start()
+        public bool Run(IShell shell)
         {
             Console.Clear();
             return true;

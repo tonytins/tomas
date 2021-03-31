@@ -3,9 +3,6 @@
 using System;
 using System.Collections.Generic;
 using Tomas.Common;
-using Tomas.Interface.Shell;
-using Tomas.Kernel.Programs;
-using Tomas.Terminal.Programs;
 using Sys = Cosmos.System;
 
 namespace Tomas.Kernel
@@ -42,10 +39,22 @@ namespace Tomas.Kernel
                     continue;
                 }
 
-                var start = program.Start();
-                if (start) continue;
-
-                break;
+                try
+                {
+                    var start = program.Run(shell);
+                    switch (start)
+                    {
+                        case true:
+                            continue;
+                        case false:
+                            Console.WriteLine("Program closed unexpectedly.");
+                            continue;
+                    }
+                }
+                catch (Exception err)
+                {
+                    Console.WriteLine(err.Message);
+                }
             }
         }
 
