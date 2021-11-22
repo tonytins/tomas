@@ -1,19 +1,17 @@
 // I license this project under the GPL 3.0 license.
 // See the LICENSE file in the project root for more information.
-using System;
-using System.Collections.Generic;
 using Tomas.Common.Programs;
 using Tomas.Interface;
 using Tomas.Kernel.Programs;
 using Sys = Cosmos.System;
 
-namespace Tomas.Kernel
-{
-    public class Shell : IShell
-    {
-        const char SYMBOL = '$';
+namespace Tomas.Kernel;
 
-        public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
+public class Shell : IShell
+{
+    const char SYMBOL = '$';
+
+    public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
         {
             {"about", new About()},
             {"fensay", new FenSay()},
@@ -21,14 +19,13 @@ namespace Tomas.Kernel
             {"commands", new Commands()}
         };
 
-        public string ReadLine
+    public string ReadLine
+    {
+        get
         {
-            get
-            {
-                Console.Write(SYMBOL);
-                var readl = Console.ReadLine();
-                return readl;
-            }
+            Console.Write(SYMBOL);
+            var readl = Console.ReadLine();
+            return readl;
         }
     }
 }

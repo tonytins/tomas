@@ -4,15 +4,13 @@ using System;
 using Tomas.Common;
 using Tomas.Interface;
 
-namespace Tomas.Terminal.Programs
+namespace Tomas.Terminal.Programs;
+
+public class About : IProgram
 {
-    public class About : IProgram
+    public bool Run(IShell shell)
     {
-        public bool Run(IShell shell)
-        {
-            Console.WriteLine($"{ComConsts.NAME} Terminal Emulator v{ComConsts.VersionGit}{Environment.NewLine}"
-                              + "TOMAS (Tony's Managed Operating System) is a operating system written in C# using the COSMOS framework.");
-            return true;
-        }
+        Console.WriteLine($"{ComConsts.NAME} (Tony's Managed Operating System) Terminal Emulator v{ComConsts.VersionGit}{Environment.NewLine}");
+        return true;
     }
 }

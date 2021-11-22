@@ -1,14 +1,10 @@
 // I license this project under the GPL 3.0 license.
 // See the LICENSE file in the project root for more information.
+namespace Tomas.Interface;
 
-using System.Collections.Generic;
-
-namespace Tomas.Interface
+public interface IShell
 {
-    public interface IShell
-    {
-        string ReadLine { get; }
+    string ReadLine { get; }
 
-        Dictionary<string, IProgram> Programs { get; }
-    }
+    Dictionary<string, IProgram> Programs { get; }
 }
