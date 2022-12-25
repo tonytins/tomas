@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using Cosmos.System.FileSystem;
 using Cosmos.System.FileSystem.VFS;
+using Tomas.Common;
 
 namespace Tomas.Kernel
 {
@@ -22,7 +23,7 @@ namespace Tomas.Kernel
                 Console.WriteLine("Creating system files.");
                 fs.CreateFile($"{SYSTEM_DIR}sysinfo.txt");
                 Console.WriteLine("Setting system preferences.");
-                File.WriteAllText($"{SYSTEM_DIR}sysinfo.txt", $"{OSConsts.NAME}, {OSConsts.VersionGit}");
+                File.WriteAllText($"{SYSTEM_DIR}sysinfo.txt", $"{ComConsts.NAME}, {ComConsts.VersionGit}");
                 Console.WriteLine("File system loaded sucesfully.");
                 var intro = File.ReadAllText($"{SYSTEM_DIR}sysinfo.txt");
                 Console.WriteLine(intro);

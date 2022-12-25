@@ -7,10 +7,10 @@ TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a operating system based 
 ### Prerequisites
 
 - Operating System
-	- Visual Studio 2019
-	- COSMOS User Kit v20190508 or later
+	- Visual Studio 2022
+	- COSMOS User Kit v2022 or later
 	- VMWare Workstation Player
-- .NET Core 3.1 or later
+- .NET 6 or later
 
 
 
