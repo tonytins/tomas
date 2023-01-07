@@ -28,3 +28,22 @@ jobs:
         run: dotnet restore src/Tomas.Terminal
       - name: Build
         run: dotnet build src/Tomas.Terminal -c Release --no-restore
+       
+  test:
+    timeout-minutes: 15
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: ["6.0.x"]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ matrix.dotnet }}
+      - name: Install test dependencies
+        run: dotnet restore src/Tomas.Tests
+      - name: Test
+        run: dotnet test src --no-restore --debug
