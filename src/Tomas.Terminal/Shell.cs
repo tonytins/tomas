@@ -1,4 +1,4 @@
-// I license this project under the GPL 3.0 license.
+// I license this project under the BSD 3-Clause license.
 // See the LICENSE file in the project root for more information.
 using System;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ using Tomas.Terminal.Programs;
 
 namespace Tomas.Terminal
 {
-    public class Shell : IShell
-    {
-        const char SYMBOL = '$';
+ public class Shell : IShell
+ {
+  const char SYMBOL = '$';
 
-        public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
+  public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
         {
             {"about", new About()},
             {"fensay", new FenSay()},
@@ -20,14 +20,14 @@ namespace Tomas.Terminal
             {"commands", new Commands()}
         };
 
-        public string ReadLine
-        {
-            get
-            {
-                Console.Write(SYMBOL);
-                var readl = Console.ReadLine();
-                return readl;
-            }
-        }
-    }
+  public string ReadLine
+  {
+   get
+   {
+    Console.Write(SYMBOL);
+    var readl = Console.ReadLine();
+    return readl;
+   }
+  }
+ }
 }

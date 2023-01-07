@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Sys = Cosmos.System;
+// I license this project under the BSD 3-Clause license.
+// See the LICENSE file in the project root for more information.
+using System;
 
 namespace Tomas.Kernal
 {
-    public class Kernel : Sys.Kernel
+    public class Kernel : Os.Kernel
     {
 
         protected override void BeforeRun()
@@ -15,7 +14,7 @@ namespace Tomas.Kernal
 
         protected override void Run()
         {
-            Console.Write("Input: ");
+            Console.Write("$");
             var input = Console.ReadLine();
             Console.Write("Text typed: ");
             Console.WriteLine(input);
