@@ -26,13 +26,12 @@ public struct SysMeta
     /// The build number is a 6-digit number, with the first 3 digits being the first 3 digits of the commit hash
     /// converted to a uint, and the last 3 digits being the last 3 digits of the commit hash converted to a uint.
     /// </summary>
-    [SuppressMessage("Usage", "CA2211:Non-constant fields should not be visible")]
     public static string BuildNumber = $"Build {BuildNumFromCommit}";
 
     /// <summary>
-    /// Let's the system know that the file system is activated.
+    /// Let's the kernel know that the file system is activated.
     /// </summary>
-    public static bool IsFSActive { get; set; } = false;
+    public static bool IsFSEnabled { get; set; } = false;
 
     /// <summary>
     /// Generates the build number from the commit hash.

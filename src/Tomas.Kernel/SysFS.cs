@@ -12,8 +12,12 @@ static class SysFS
 
     static string LOG_FILE = $"{SYSTEM_DIR}system.log";
 
-    // An instance of the CosmosVFS class, used for accessing the virtual file system
-    static readonly CosmosVFS _fs = new();
+    const string FS_ERROR = "File system disabled.";
+
+    /// <summary>
+    /// An instance of the CosmosVFS class, used for accessing the virtual file system
+    /// </summary>
+    static CosmosVFS fileSystem = new();
 
     /// <summary>
     /// Initializes the file system by creating the system directory and sysinfo.txt file
@@ -26,20 +30,25 @@ static class SysFS
             var createSysFiles = "Creating system files.";
             var setSysPref = "Writing system info.";
             var fsSuccess = "File system succesfully initialized.";
+            var sysInfoFile = "sysinfo.txt";
 
             // Register the CosmosVFS instance as the virtual file system
-            VFSManager.RegisterVFS(_fs);
+            VFSManager.RegisterVFS(fileSystem);
 
             // Create the system directory
-            _fs.CreateDirectory(SYSTEM_DIR);
+            if (!Directory.Exists(SYSTEM_DIR))
+                fileSystem.CreateDirectory(SYSTEM_DIR);
 
-            _fs.CreateFile($"{SYSTEM_DIR}{LOG_FILE}");
+            // Create the system.log file in the system directory
+            if (!File.Exists($"{SYSTEM_DIR}{LOG_FILE}"))
+                fileSystem.CreateFile($"{SYSTEM_DIR}{LOG_FILE}");
 
             Console.WriteLine(createSysFiles);
             File.AppendAllText(LOG_FILE, createSysFiles);
 
             // Create the sysinfo.txt file in the system directory
-            _fs.CreateFile($"{SYSTEM_DIR}sysinfo.txt");
+            if (!File.Exists($"{SYSTEM_DIR}{sysInfoFile}"))
+                fileSystem.CreateFile($"{SYSTEM_DIR}{sysInfoFile}");
 
             Console.WriteLine(setSysPref);
 
@@ -52,7 +61,7 @@ static class SysFS
             File.AppendAllText(LOG_FILE, fsSuccess);
 
             // Set the IsFSActive property of the SysMeta class to true
-            SysMeta.IsFSActive = true;
+            SysMeta.IsFSEnabled = true;
 
             // Read the contents of the sysinfo.txt file and print it to the console
             var systemInfo = File.ReadAllText($"{SYSTEM_DIR}sysinfo.txt");
@@ -74,8 +83,13 @@ static class SysFS
     {
         try
         {
+            // If file system isn't enabeld, throw exception
+            if (!SysMeta.IsFSEnabled)
+                throw new IOException(FS_ERROR);
+
             // Create the directory using the CosmosVFS instance
-            _fs.CreateDirectory($"{ROOT_DIR}\\{directory}");
+            if (!Directory.Exists($"{ROOT_DIR}\\{directory}"))
+                fileSystem.CreateDirectory($"{ROOT_DIR}\\{directory}");
         }
         catch (IOException err)
         {
@@ -94,8 +108,13 @@ static class SysFS
     {
         try
         {
+            // If file system isn't enabeld, throw exception
+            if (!SysMeta.IsFSEnabled)
+                throw new IOException(FS_ERROR);
+
             // Create the file using the CosmosVFS instance
-            _fs.CreateFile($"{ROOT_DIR}\\{path}\\{file}");
+            if (!File.Exists($"{ROOT_DIR}\\{path}\\{file}"))
+                fileSystem.CreateFile($"{ROOT_DIR}\\{path}\\{file}");
         }
         catch (IOException err)
         {
@@ -114,6 +133,10 @@ static class SysFS
     {
         try
         {
+            // If file system isn't enabeld, throw exception
+            if (!SysMeta.IsFSEnabled)
+                throw new IOException(FS_ERROR);
+
             // Get the directories in the specified path using the Directory.GetDirectories method
             var dirs = Directory.GetDirectories(path);
 
