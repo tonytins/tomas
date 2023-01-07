@@ -14,13 +14,6 @@ public class Kernel : Os.Kernel
 
     protected override void Run()
     {
-        /*
-        Console.Write("$");
-        var input = Console.ReadLine();
-        Console.Write("Text typed: ");
-        Console.WriteLine(input);
-        */
-
         while (true)
         {
             var shell = new Shell();
