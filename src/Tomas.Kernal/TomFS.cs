@@ -1,7 +1,5 @@
 // I license this project under the BSD 3-Clause license.
 // See the LICENSE file in the project root for more information.
-using System;
-using System.IO;
 using Cosmos.System.FileSystem;
 using Cosmos.System.FileSystem.VFS;
 using Tomas.Common;
@@ -23,7 +21,7 @@ class TomFS
             Console.WriteLine("Creating system files.");
             fs.CreateFile($"{SYSTEM_DIR}sysinfo.txt");
             Console.WriteLine("Setting system preferences.");
-            File.WriteAllText($"{SYSTEM_DIR}sysinfo.txt", $"{ComConsts.NAME}, {ComConsts.VersionGit}");
+            File.WriteAllText($"{SYSTEM_DIR}sysinfo.txt", $"{ComConsts.NAME}, {ComConsts.BuildNumber}");
             Console.WriteLine("File system loaded sucesfully.");
             var intro = File.ReadAllText($"{SYSTEM_DIR}sysinfo.txt");
             Console.WriteLine(intro);

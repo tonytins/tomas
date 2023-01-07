@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
@@ -6,6 +6,7 @@
         <Platform>cosmos</Platform>
         <SupportsX86Intrinsics>false</SupportsX86Intrinsics>
         <SelfContained>True</SelfContained>
+        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -26,8 +27,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Tomas.Common\Tomas.Common.csproj" />
-      <ProjectReference Include="..\Tomas.Interface\Tomas.Interface.csproj" />
+        <ProjectReference Include="..\Tomas.Common\Tomas.Common.csproj" />
+        <ProjectReference Include="..\Tomas.Interface\Tomas.Interface.csproj" />
     </ItemGroup>
 
 </Project>
