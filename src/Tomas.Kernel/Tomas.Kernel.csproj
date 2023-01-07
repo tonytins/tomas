@@ -25,10 +25,14 @@
         <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
         <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="GitInfo" Version="2.3.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Tomas.Common\Tomas.Common.csproj" />
+        <ProjectReference Include="..\Tomas.Core\Tomas.Core.csproj" />
         <ProjectReference Include="..\Tomas.Interface\Tomas.Interface.csproj" />
     </ItemGroup>
 

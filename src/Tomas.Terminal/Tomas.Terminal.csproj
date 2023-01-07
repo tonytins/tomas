@@ -8,7 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Tomas.Common\Tomas.Common.csproj" />
+        <PackageReference Include="GitInfo" Version="2.3.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="NLua" Version="1.6.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Tomas.Core\Tomas.Core.csproj" />
         <ProjectReference Include="..\Tomas.Interface\Tomas.Interface.csproj" />
     </ItemGroup>
 

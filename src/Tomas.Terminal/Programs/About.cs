@@ -6,10 +6,9 @@ namespace Tomas.Terminal.Programs;
 
 public class About : IProgram
 {
-public bool Run(IShell shell)
-{
-Console.WriteLine($"{SysMeta.NAME} Terminal Emulator v{SysMeta.BuildNumber}{Environment.NewLine}"
-                 + "TOMAS (Tony's Managed Operating System) is a operating system written in C# using the COSMOS framework.");
-return true;
-}
+    public bool Run(IShell shell)
+    {
+        Console.WriteLine($"{TermMeta.NAME} Terminal Emulator v{TermMeta.VERSION}");
+        return true;
+    }
 }

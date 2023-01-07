@@ -7,12 +7,12 @@ namespace Tomas.Common;
 /// <summary>
 /// System metdata, such as name, version and build number.
 /// </summary>
-public struct SysMeta
+public struct TermMeta
 {
     /// <summary>
     /// The name of the operating system.
     /// </summary>
-    public const string NAME = "TOMAS";
+    public const string NAME = "TOMAS Emulator";
 
     /// <summary>
     /// The version of the operating system, in the Calendar Versioning format: "yy.minor.patch".
@@ -27,11 +27,6 @@ public struct SysMeta
     /// converted to a uint, and the last 3 digits being the last 3 digits of the commit hash converted to a uint.
     /// </summary>
     public static string BuildNumber = $"Build {BuildNumFromCommit}";
-
-    /// <summary>
-    /// Let's the kernel know that the file system is activated.
-    /// </summary>
-    public static bool IsFSEnabled { get; set; } = false;
 
     /// <summary>
     /// Generates the build number from the commit hash.

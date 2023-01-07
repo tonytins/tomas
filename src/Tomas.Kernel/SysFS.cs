@@ -6,13 +6,13 @@ namespace Tomas.Kernel;
 static class SysFS
 {
     // The root directory of the file system
-    const string ROOT_DIR = "0:\\";
+    public const string ROOT_DIR = "0:\\";
     // The system directory, located in the root directory
     static string SYSTEM_DIR = $"{ROOT_DIR}\\SYSTEM\\";
 
     static string LOG_FILE = $"{SYSTEM_DIR}system.log";
 
-    const string FS_ERROR = "File system disabled.";
+    public const string FS_ERROR = "File system disabled.";
 
     /// <summary>
     /// An instance of the CosmosVFS class, used for accessing the virtual file system
