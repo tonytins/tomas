@@ -5,6 +5,8 @@
 <br>
 <img title="" src="assets/screenshot.png" alt=""">
 <hr>
+</p>
+<p align="center">
   <a href="https://github.com/tonytins/tomas/blob/main/LICENSE"><img src="https://img.shields.io/github/license/tonytins/tomas" alt="GitHub license"></a>
   <a href="https://github.com/tonytins/tomas/actions?query=workflow%3Adotnet.yml"><img src="https://img.shields.io/github/actions/workflow/status/tonytins/tomas/dotnet.yml" alt="GitHub Workflow Status"></a>
   <img src="https://img.shields.io/github/commit-activity/w/tonytins/tomas" alt="GitHub commit activity">
