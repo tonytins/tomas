@@ -9,13 +9,12 @@ public class Shell : IShell
 {
     const char SYMBOL = '$';
 
-    public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
+    public Dictionary<string, IProgram> Programs => new()
     {
         {"about", new About() },
         {"fensay", new FenSay() },
         {"clear", new Clear() },
-        {"commands", new Commands() },
-        {"shutdown", new Shutdown() }
+        {"commands", new Commands() }
     };
 
     public string ReadLine
