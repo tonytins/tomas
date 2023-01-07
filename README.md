@@ -8,11 +8,15 @@ TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a hobby operating system 
 
 ### Prerequisites
 
-- Operating System
-  - Visual Studio 2022
-  - COSMOS User Kit v2022 or later
-  - VMWare Workstation Player
+- Windows 10 or later
+
+- Visual Studio 2022
+
 - .NET 6 or later
+
+- COSMOS User Kit v2022 or later
+
+- VMWare Workstation Player
 
 ## License
 

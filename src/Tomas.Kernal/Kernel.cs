@@ -8,8 +8,12 @@ public class Kernel : Os.Kernel
 
     protected override void BeforeRun()
     {
-        Console.Clear();
-        Console.WriteLine("TOMAS booted successfully.");
+        SysFS.Initialize();
+
+        if (!SysMeta.IsFSActive)
+            Console.WriteLine($"{SysMeta.NAME} booted with errors.");
+        else
+            Console.WriteLine($"{SysMeta.NAME} booted successfully.");
     }
 
     protected override void Run()

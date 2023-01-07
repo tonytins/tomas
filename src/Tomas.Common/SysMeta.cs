@@ -32,7 +32,7 @@ public struct SysMeta
     /// <summary>
     /// Let's the system know that the file system is activated.
     /// </summary>
-    public static bool IsFSActive = false;
+    public static bool IsFSActive { get; set; } = false;
 
     /// <summary>
     /// Generates the build number from the commit hash.
