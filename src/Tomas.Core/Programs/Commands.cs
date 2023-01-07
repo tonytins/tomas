@@ -1,7 +1,10 @@
-// I license this project under the BSD 3-Clause license.
-// See the LICENSE file in the project root for more information.
-
-namespace Tomas.Common.Programs;
+/*
+In jurisdictions that recognize copyright waivers, I've waived all copyright
+and related or neighboring rights for to this project. In areas where these
+waivers are not recognized, BSD-3-Clause is enforced.
+See the (UN)LICENSE file in the project root for more information.
+*/
+namespace Tomas.Core.Programs;
 
 public class Commands : IProgram
 {

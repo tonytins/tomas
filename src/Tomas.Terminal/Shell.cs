@@ -1,14 +1,18 @@
-// I license this project under the BSD 3-Clause license.
-// See the LICENSE file in the project root for more information.
+/*
+In jurisdictions that recognize copyright waivers, I've waived all copyright
+and related or neighboring rights for to this project. In areas where these
+waivers are not recognized, BSD-3-Clause is enforced.
+See the (UN)LICENSE file in the project root for more information.
+*/
 using Tomas.Terminal.Programs;
 
 namespace Tomas.Terminal;
 
 public class Shell : IShell
 {
-    const char SYMBOL = '$';
+ const char SYMBOL = '$';
 
-    public Dictionary<string, IProgram> Programs => new()
+ public Dictionary<string, IProgram> Programs => new()
     {
         {"about", new About()},
         {"fensay", new FenSay()},
@@ -16,13 +20,13 @@ public class Shell : IShell
         {"commands", new Commands()}
     };
 
-    public string ReadLine
-    {
-        get
-        {
-            Console.Write(SYMBOL);
-            var readl = Console.ReadLine();
-            return readl;
-        }
-    }
+ public string ReadLine
+ {
+  get
+  {
+   Console.Write(SYMBOL);
+   var readl = Console.ReadLine();
+   return readl;
+  }
+ }
 }
