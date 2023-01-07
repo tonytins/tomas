@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomas.Interface", "Tomas.In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomas.Terminal", "Tomas.Terminal\Tomas.Terminal.csproj", "{49E67E55-F9D2-419A-8097-38F39E98A95E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomas.Kernal", "Tomas.Kernal\Tomas.Kernal.csproj", "{20750C95-A3C7-4958-BA9F-56E4C3BD0293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomas.Kernel", "Tomas.Kernal\Tomas.Kernel.csproj", "{20750C95-A3C7-4958-BA9F-56E4C3BD0293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

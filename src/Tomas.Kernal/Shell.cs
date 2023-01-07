@@ -3,28 +3,28 @@
 using System;
 using System.Collections.Generic;
 
-namespace Tomas.Kernel
+namespace Tomas.Kernel;
+
+public class Shell : IShell
 {
-    public class Shell : IShell
+    const char SYMBOL = '$';
+
+    public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
     {
-        const char SYMBOL = '$';
+        {"about", new About() },
+        {"fensay", new FenSay() },
+        {"clear", new Clear() },
+        {"commands", new Commands() },
+        {"shutdown", new Shutdown() }
+    };
 
-        public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
+    public string ReadLine
+    {
+        get
         {
-            {"about", new About()},
-            {"fensay", new FenSay()},
-            {"clear", new Clear()},
-            {"commands", new Commands()}
-        };
-
-        public string ReadLine
-        {
-            get
-            {
-                Console.Write(SYMBOL);
-                var readl = Console.ReadLine();
-                return readl;
-            }
+            Console.Write(SYMBOL);
+            var readl = Console.ReadLine();
+            return readl;
         }
     }
 }
