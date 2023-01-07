@@ -1,6 +1,6 @@
 # TOMAS
 
-![](C:\Users\zc456\source\repos\tomas\screenshot.png)
+<img title="" src="screenshot.png" alt="" data-align="center">
 
 TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a hobby operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework that comes with a respective terminal emulator.
 
