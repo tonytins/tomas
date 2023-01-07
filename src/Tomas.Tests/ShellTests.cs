@@ -16,7 +16,7 @@ public class ShellTests
     [Fact]
     public void ProgramTest()
     {
-        // Create a mock program
+        // Create a mock program instance
         var program = new MockProgram();
 
         // Assert that the Run method of the program and returns true when passed the shell object.

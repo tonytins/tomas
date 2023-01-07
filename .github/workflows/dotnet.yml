@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: dotnet restore src/Tomas.Terminal
       - name: Build
-        run: dotnet build src/Tomas.Terminal -c Release --no-restore
+        run: dotnet build src/Tomas.Terminal -c Release --no-restore --nologo
        
   test:
     timeout-minutes: 15
@@ -44,6 +44,6 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet }}
       - name: Install test dependencies
-        run: dotnet restore src/Tomas.Tests
+        run: dotnet restore src/Tomas.Tests 
       - name: Test
-        run: dotnet test src --no-restore --debug
+        run: dotnet test src --no-restore --nologo
