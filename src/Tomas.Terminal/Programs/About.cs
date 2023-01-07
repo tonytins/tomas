@@ -1,12 +1,11 @@
 // I license this project under the BSD 3-Clause license.
 // See the LICENSE file in the project root for more information.
-using System;
 using Tomas.Common;
 using Tomas.Interface;
 
 namespace Tomas.Terminal.Programs
 {
- public class About : IProgram
+    public class About : IProgram
  {
   public bool Run(IShell shell)
   {

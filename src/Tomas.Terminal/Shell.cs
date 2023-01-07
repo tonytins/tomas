@@ -1,33 +1,28 @@
 // I license this project under the BSD 3-Clause license.
 // See the LICENSE file in the project root for more information.
-using System;
-using System.Collections.Generic;
-using Tomas.Common.Programs;
-using Tomas.Interface;
 using Tomas.Terminal.Programs;
 
-namespace Tomas.Terminal
+namespace Tomas.Terminal;
+
+public class Shell : IShell
 {
- public class Shell : IShell
- {
-  const char SYMBOL = '$';
+    const char SYMBOL = '$';
 
-  public Dictionary<string, IProgram> Programs => new Dictionary<string, IProgram>()
+    public Dictionary<string, IProgram> Programs => new()
+    {
+        {"about", new About()},
+        {"fensay", new FenSay()},
+        {"clear", new Clear()},
+        {"commands", new Commands()}
+    };
+
+    public string ReadLine
+    {
+        get
         {
-            {"about", new About()},
-            {"fensay", new FenSay()},
-            {"clear", new Clear()},
-            {"commands", new Commands()}
-        };
-
-  public string ReadLine
-  {
-   get
-   {
-    Console.Write(SYMBOL);
-    var readl = Console.ReadLine();
-    return readl;
-   }
-  }
- }
+            Console.Write(SYMBOL);
+            var readl = Console.ReadLine();
+            return readl;
+        }
+    }
 }

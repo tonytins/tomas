@@ -1,6 +1,6 @@
 # TOMAS
 
-TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework. It comes with a respective terminal emulator.
+TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a hobby operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework that comes with a respective terminal emulator.
 
 ## Requirements
 
@@ -16,4 +16,4 @@ TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a operating system based 
 
 ## License
 
-This project is licensed under the GPL 3.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the BSD 3-Clause license - see the [LICENSE](LICENSE) file for details.
