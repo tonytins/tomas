@@ -1,6 +1,10 @@
 # TOMAS
 
 <p align="center">
+<img title="" src="assets/logo.svg" width="250" alt=""">
+<br>
+<img title="" src="assets/screenshot.png" alt=""">
+<hr>
   <a href="https://github.com/tonytins/tomas/blob/main/LICENSE"><img src="https://img.shields.io/github/license/tonytins/tomas" alt="GitHub license"></a>
   <a href="https://github.com/tonytins/tomas/actions?query=workflow%3Adotnet.yml"><img src="https://img.shields.io/github/actions/workflow/status/tonytins/tomas/dotnet.yml" alt="GitHub Workflow Status"></a>
   <img src="https://img.shields.io/github/commit-activity/w/tonytins/tomas" alt="GitHub commit activity">
@@ -9,9 +13,6 @@
   <img src="https://img.shields.io/codeclimate/maintainability-percentage/tonytins/tomas" alt="Code Climate maintainability">
   <img src="https://img.shields.io/codeclimate/tech-debt/tonytins/tomas" alt="Code Climate technical debt">
 </p>
-
-
-<img title="" src="screenshot.png" alt="" align="center">
 
 TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a hobby operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework that comes with a respective terminal emulator.
 
