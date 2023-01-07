@@ -4,9 +4,9 @@ on:
   schedule:
     - cron: "0 0 * * 0"
   push:
-    branches: [main, develop, "feature/**"]
+    branches: [main, develop, "feature/**", "release/**"]
   pull_request:
-    branches: [main, develop, "feature/**"]
+    branches: [main, develop, "feature/**", "release/**"]
 
 jobs:
   build:
