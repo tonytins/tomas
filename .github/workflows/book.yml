@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  push:
+    branches: [main, publish]
+
+jobs:
+  build:
+    timeout-minutes: 15
+    continue-on-error: true
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: "latest"
+
+      - name: Build
+        run: mdbook build ./docs

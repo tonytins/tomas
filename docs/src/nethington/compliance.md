@@ -1,0 +1,7 @@
+# Compliance with Regulations in Nethington
+
+In order to comply with the Nethington[^1] government's [adoption of open-source software](https://nethington.tonybark.com/bills/drafts/hr2.html) for all government-owned computer systems, TOMAS will be used as government software. The operating system will meet the functional and technical requirements of the government and adhere to the principles of responsible and open source development. TOMAS will meet the requirements for strong track record of security and stability, and be in compliance with all applicable laws and regulations, including those outlined in [Article V](https://nethington.tonybark.com/constitution.html#article-v-cybersecurity) of the Constitution regarding cybersecurity and the use of long-term support or enterprise-grade open source software. The Nethington Cybersecurity Agency (NCA) will evaluate TOMAS and determine its suitability for use by the government. TOMAS will implement software to keep the identity of individuals working for the NCA confidential as further outlined in Article V of the Constitution.
+
+## Footnotes
+
+[^1]: [Nethington](https://nethington.tonybark.com) is another hobby project of mine in the form of micronation,

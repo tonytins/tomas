@@ -1,9 +1,9 @@
 # TOMAS
 
 <p align="center">
-<img title="" src="assets/logo.svg" width="250" alt=""">
+<img title="" src="docs/src/static/imgs/logo.svg" width="250" alt=""">
 <br>
-<img title="" src="assets/screenshot.png" alt=""">
+<img title="" src="docs/src/static/imgs/screenshot.png" alt=""">
 <hr>
 </p>
 <p align="center">
@@ -18,9 +18,9 @@
 
 TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a hobby operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework that comes with a respective terminal emulator.
 
-## Fictional version
+<!--## Fictional version
 
-Within [Casey Universe](https://github.com/tonytins/cugame), TOMAS is an operating system that serves as Anthony's tool to explore the galaxy while working for the Akonos Corporation, a company that builds artificial worlds. He can hack into any system he pleases and uses that 
+Within [Casey Universe](https://github.com/tonytins/cugame), TOMAS is an operating system that serves as Anthony's tool to explore the galaxy while working for the Akonos Corporation, a company that builds artificial worlds. He can hack into any system he pleases and uses that -->
 
 ## Requirements
 

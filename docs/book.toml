@@ -1,0 +1,17 @@
+[book]
+authors = ["Tony Bark"]
+language = "en"
+multilingual = false
+src = "src"
+title = "TOMAS"
+
+[build]
+create-missing = false
+
+[output.html]
+no-section-label = true
+git-repository-url = "https://github.com/tonytins/tomas"
+additional-css = ["custom.css"]
+
+[output.html.fold]
+enable = true
