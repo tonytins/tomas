@@ -8,9 +8,15 @@ namespace Tomas.Core.Programs;
 
 public class Clear : IProgram
 {
- public bool Run(IShell shell)
- {
-  Console.Clear();
-  return true;
- }
+    public string Name { get; set; }
+
+    public string Description { get; set; }
+
+    public IEnumerable<IArguments> Arguments { get; set; }
+
+    public bool Entry(IShell shell, IEnumerable<KeyValuePair<string, object>> arguments)
+    {
+        Console.Clear();
+        return true;
+    }
 }

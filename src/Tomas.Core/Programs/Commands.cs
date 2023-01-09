@@ -8,7 +8,13 @@ namespace Tomas.Core.Programs;
 
 public class Commands : IProgram
 {
-    public bool Run(IShell shell)
+    public string Name { get; set; }
+
+    public string Description { get; set; }
+
+    public IEnumerable<IArguments> Arguments { get; set; }
+
+    public bool Entry(IShell shell, IEnumerable<KeyValuePair<string, object>> arguments)
     {
         Console.WriteLine($"Commands:");
         var progs = shell.Programs;

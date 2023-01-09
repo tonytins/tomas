@@ -8,9 +8,22 @@ namespace Tomas.Tests.Shell;
 
 internal class MockProgram : IProgram
 {
-    public bool Run(IShell shell)
+    public string Name { get; set; }
+
+    public string Description { get; set; }
+
+    public IEnumerable<IArguments> Arguments { get; set; }
+
+    public bool Entry(IShell shell, IEnumerable<KeyValuePair<string, object>> arguments)
     {
-        Debug.WriteLine("Test Program.");
+        // Iterate through the arguments
+        foreach (var argument in arguments)
+        {
+            // Print the argument name and value
+            Debug.WriteLine($"Argument name: {argument.Key}, Argument value: {argument.Value}");
+        }
+
+        // Return true to indicate success
         return true;
     }
 }

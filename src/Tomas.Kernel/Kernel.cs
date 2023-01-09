@@ -22,7 +22,6 @@ public class Kernel : Os.Kernel
             Console.WriteLine($"{SysMeta.NAME} booted successfully.");
     }
 
-    // This method is the main loop of the kernel, which handles input and runs programs
     protected override void Run()
     {
         // Run the loop indefinitely
@@ -34,34 +33,53 @@ public class Kernel : Os.Kernel
             // Read a line of input from the user
             var command = shell.ReadLine;
 
+            // Split the command into words
+            var words = command.Split(' ');
+
+            // If there are no words, skip this iteration
+            if (words.Length == 0)
+                continue;
+
+            // Get the program name
+            var programName = words[0];
+
             // Get the dictionary of programs from the shell
             var programs = shell.Programs;
 
-            // If the command is not a key in the dictionary of programs, print an error message
-            // and continue to the next iteration of the loop
-            if (!programs.TryGetValue(command, out var program))
+            // If the program doesn't exist, display an error message
+            if (!programs.TryGetValue(programName, out var program))
             {
-                Console.WriteLine("Command Not Found.");
+                Console.WriteLine($"{programName}: command not found");
+                continue;
+            }
+
+            // Get the arguments
+            var arguments = words.Skip(1).ToArray();
+
+            // Parse and validate the arguments
+            var parsedArguments = shell.ParseArguments(program, arguments);
+            if (parsedArguments == null)
+            {
+                // If the arguments are invalid, display an error message
+                Console.WriteLine($"{programName}: invalid arguments");
                 continue;
             }
 
             // Try to run the program and handle any exceptions that may be thrown
             try
             {
-                // Run the program and store the returned value in the 'start' variable
-                var start = program.Run(shell);
+                // Run the program and store the returned value in the 'result' variable
+                var result = program.Entry(shell, parsedArguments);
 
-                // Check the value of 'start' and take the appropriate action
-                switch (start)
+                switch (result)
                 {
                     case true:
-                        // If 'start' is true, continue to the next iteration of the loop
                         continue;
                     case false:
-                        // If 'start' is false, print an error message and continue to the next iteration of the loop
                         Console.WriteLine("Program closed unexpectedly.");
                         continue;
                 }
+
             }
             catch (Exception err)
             {

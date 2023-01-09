@@ -8,13 +8,19 @@ namespace Tomas.Kernel.Programs;
 
 public class About : IProgram
 {
- public bool Run(IShell shell)
- {
-  Console.WriteLine($"TOMAS v{SysMeta.VERSION} ({SysMeta.BuildNumber}) is a hobby operating system written in C# using the COSMOS framework.{Environment.NewLine}Commands:");
-  var progs = shell.Programs;
-  foreach (var commands in progs.Keys)
-   Console.WriteLine(commands);
+    public string Name { get; set; }
 
-  return true;
- }
+    public string Description { get; set; }
+
+    public IEnumerable<IArguments> Arguments { get; set; }
+
+    public bool Entry(IShell shell, IEnumerable<KeyValuePair<string, object>> arguments)
+    {
+        Console.WriteLine($"TOMAS v{SysMeta.VERSION} ({SysMeta.BuildNumber}) is a hobby operating system written in C# using the COSMOS framework.{Environment.NewLine}Commands:");
+        var progs = shell.Programs;
+        foreach (var commands in progs.Keys)
+            Console.WriteLine(commands);
+
+        return true;
+    }
 }

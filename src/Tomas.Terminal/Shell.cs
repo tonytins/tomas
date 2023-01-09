@@ -10,9 +10,9 @@ namespace Tomas.Terminal;
 
 public class Shell : IShell
 {
- const char SYMBOL = '$';
+    const char SYMBOL = '$';
 
- public Dictionary<string, IProgram> Programs => new()
+    public Dictionary<string, IProgram> Programs => new()
     {
         {"about", new About()},
         {"fensay", new FenSay()},
@@ -20,13 +20,18 @@ public class Shell : IShell
         {"commands", new Commands()}
     };
 
- public string ReadLine
- {
-  get
-  {
-   Console.Write(SYMBOL);
-   var readl = Console.ReadLine();
-   return readl;
-  }
- }
+    public string ReadLine
+    {
+        get
+        {
+            Console.Write(SYMBOL);
+            var readl = Console.ReadLine();
+            return readl;
+        }
+    }
+
+    public IEnumerable<KeyValuePair<string, object>>? ParseArguments(IProgram program, string[] arguments)
+    {
+        throw new NotImplementedException();
+    }
 }

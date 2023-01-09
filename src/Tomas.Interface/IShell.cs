@@ -8,7 +8,9 @@ namespace Tomas.Interface;
 
 public interface IShell
 {
- string ReadLine { get; }
+    string ReadLine { get; }
 
- Dictionary<string, IProgram> Programs { get; }
+    Dictionary<string, IProgram> Programs { get; }
+
+    IEnumerable<KeyValuePair<string, object>>? ParseArguments(IProgram program, string[] arguments);
 }

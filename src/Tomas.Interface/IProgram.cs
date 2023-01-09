@@ -6,13 +6,20 @@ See the (UN)LICENSE file in the project root for more information.
 */
 namespace Tomas.Interface;
 
+// Represents a program that can be run by the shell
 public interface IProgram
 {
- /// <summary>
- /// The program's main entry point. Boolean behaves as an exit point.
- /// True and False are the equivalent to C's 0 and 1, i.e. "Success" and "Failure," respectfully.
- /// </summary>
- /// <param name="shell">Allows the program to interact with the shell.</param>
- /// <returns>Exit back to shell.</returns>
- bool Run(IShell shell);
+    // The name of the program
+    string Name { get; }
+
+    // A description of the program
+    string Description { get; }
+
+    // The arguments that the program expects
+    IEnumerable<IArguments> Arguments { get; }
+
+    // The main entry point of the program
+    // Takes a shell object to allow the program to interact with the shell,
+    // and a dictionary of arguments passed to the program by the shell
+    bool Entry(IShell shell, IEnumerable<KeyValuePair<string, object>> arguments);
 }

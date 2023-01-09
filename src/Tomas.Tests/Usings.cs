@@ -5,7 +5,5 @@ waivers are not recognized, BSD-3-Clause is enforced.
 See the (UN)LICENSE file in the project root for more information.
 */
 global using Xunit;
-global using System.Diagnostics.CodeAnalysis;
 global using System.Diagnostics;
-global using Tomas.Core;
 global using Tomas.Interface;

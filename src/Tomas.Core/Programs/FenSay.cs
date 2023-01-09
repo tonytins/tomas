@@ -9,10 +9,10 @@ namespace Tomas.Core.Programs;
 public class FenSay : IProgram
 {
 
- /// <summary>
- /// Fennec art by Todd Vargo
- /// </summary>
- const string _fennec = @"                \/
+    /// <summary>
+    /// Fennec art by Todd Vargo
+    /// </summary>
+    const string _fennec = @"                \/
    /\   /\
   //\\_//\\     ____
   \_     _/    /   /
@@ -23,19 +23,25 @@ public class FenSay : IProgram
      [ [ /  \/ _/
     _[ [ \  /_/";
 
- readonly string[] _phrases =
- {
+    readonly string[] _phrases =
+    {
          "[SCREAMS IN FENNEC]",
          "Some people call me a coffee fox.",
          "Drink Soda. It makes you see faster.",
          "10/10, Wouldn't Recommend."
      };
 
- public bool Run(IShell shell)
- {
-  var rng = new Random();
-  var phrases = _phrases[rng.Next(_phrases.Length)];
-  Console.WriteLine($"{phrases}{Environment.NewLine}{_fennec}");
-  return true;
- }
+    public string Name { get; set; }
+
+    public string Description { get; set; }
+
+    public IEnumerable<IArguments> Arguments { get; set; }
+
+    public bool Entry(IShell shell, IEnumerable<KeyValuePair<string, object>> arguments)
+    {
+        var rng = new Random();
+        var phrases = _phrases[rng.Next(_phrases.Length)];
+        Console.WriteLine($"{phrases}{Environment.NewLine}{_fennec}");
+        return true;
+    }
 }

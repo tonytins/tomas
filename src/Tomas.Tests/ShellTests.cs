@@ -19,8 +19,15 @@ public class ShellTests
         // Create a mock program instance
         var program = new MockProgram();
 
-        // Assert that the Run method of the program and returns true when passed the shell object.
-        Assert.True(program.Run(_mockShell));
-    }
+        // Create a dictionary of arguments to pass to the program
+        var arguments = new Dictionary<string, object>
+        {
+            {"arg1", "value1"},
+            {"arg2", 123},
+            {"arg3", true},
+        };
 
+        // Assert that the Run method of the program returns true when passed the shell object and the arguments dictionary.
+        Assert.True(program.Entry(_mockShell, arguments));
+    }
 }

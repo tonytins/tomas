@@ -18,9 +18,11 @@
 
 TOMAS (**To**ny's **Ma**naged Operating **S**ystem) is a hobby operating system based on the [COSMOS](https://github.com/CosmosOS/Cosmos) framework that comes with a respective terminal emulator.
 
-## Requirements
+## Fictional version
 
-### Prerequisites
+Within [Casey Universe](https://github.com/tonytins/cugame), TOMAS is an operating system that serves as Anthony's tool to explore the galaxy while working for the Akonos Corporation, a company that builds artificial worlds. He can hack into any system he pleases and uses that 
+
+## Requirements
 
 - Windows 10 or later
 - Visual Studio 2022

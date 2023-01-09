@@ -14,4 +14,9 @@ internal class MockShell : IShell
     {
         { "test", new MockProgram() },
     };
+
+    public IEnumerable<KeyValuePair<string, object>>? ParseArguments(IProgram program, string[] arguments)
+    {
+        throw new NotImplementedException();
+    }
 }
