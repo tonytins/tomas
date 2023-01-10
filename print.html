@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="changelog.html">Changelog</a></li><li class="chapter-item affix "><li class="part-title">Design</li><li class="chapter-item "><a href="design/interfaces.html">Interfaces</a></li><li class="chapter-item "><div>File System</div></li><li class="chapter-item "><div>Translations</div></li><li class="chapter-item affix "><li class="part-title">Nethington</li><li class="chapter-item "><a href="nethington/compliance.html">Compliance</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="changelog.html">Changelog</a></li><li class="chapter-item "><a href="supportpolicy.html">Support Policy</a></li><li class="chapter-item affix "><li class="part-title">Design</li><li class="chapter-item "><a href="design/interfaces.html">Interfaces</a></li><li class="chapter-item "><div>File System</div></li><li class="chapter-item "><div>Translations</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -177,7 +177,24 @@
 <li>Replaced BasicApp with AboutApp</li>
 <li>Removd TerminalCancelEventArgs and everything related to it</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="interfaces"><a class="header" href="#interfaces">Interfaces</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="support-policy"><a class="header" href="#support-policy">Support Policy</a></h1>
+<p>Although a hobby, I have wanted to test the idea of some sort of support policy for my projects. In my experience, it provides a nice fallback. For example, a bug in the unzipping process when I switched APIs in my former Blue Rose launcher and updater forced me to create an LTS out of a version that lacked the change while I searched for the cause of the problem. With the current development speed of COSMOS, a hypothetical LTS would possibly last one year.</p>
+<!-- 
+## Standard Edition
+
+The Standard Edition of TOMAS is intended for general use and experimentation. It is provided on an "as is" basis, and no guarantees are made regarding its reliability or suitability for any particular purpose.
+
+## Longhorn Edition
+
+The Longhorn Edition of TOMAS is designed for use in enterprise scenarios. It is intended to adhere to the requirements for cybersecurity and the use of long-term support or enterprise-grade open source software.
+
+## Support Table
+
+| Edition  | Support Period |
+| -------- | -------------- |
+| Standard | 1 year         |
+| Longhorn | 2 years        |
+ --><div style="break-before: page; page-break-before: always;"></div><h1 id="interfaces"><a class="header" href="#interfaces">Interfaces</a></h1>
 <p>Since 19.1, TOMAS uses a modular interface design for writing and executing programs. At the moment, the operating system doesn't yet support loading assemblies that would take advantage of this API, but it is being looked into.</p>
 <h2 id="design"><a class="header" href="#design">Design</a></h2>
 <p><code>IProgram</code> is used to create the actual program while <code>IShell</code> executes the respective program from a dictionary. While still early in development, the approach has allowed for easy migration from one major release of COSMOS to another with little to no modifications of the code itself.</p>
@@ -199,12 +216,6 @@
     IEnumerable&lt;KeyValuePair&lt;string, object&gt;&gt;? ParseArguments(IProgram program, string[] arguments);
 }
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="compliance-with-regulations-in-nethington"><a class="header" href="#compliance-with-regulations-in-nethington">Compliance with Regulations in Nethington</a></h1>
-<p>In order to comply with the Nethington<sup class="footnote-reference"><a href="#1">1</a></sup> government's <a href="https://nethington.tonybark.com/bills/drafts/hr2.html">adoption of open-source software</a> for all government-owned computer systems, TOMAS will be used as government software. The operating system will meet the functional and technical requirements of the government and adhere to the principles of responsible and open source development. TOMAS will meet the requirements for strong track record of security and stability, and be in compliance with all applicable laws and regulations, including those outlined in <a href="https://nethington.tonybark.com/constitution.html#article-v-cybersecurity">Article V</a> of the Constitution regarding cybersecurity and the use of long-term support or enterprise-grade open source software. The Nethington Cybersecurity Agency (NCA) will evaluate TOMAS and determine its suitability for use by the government. TOMAS will implement software to keep the identity of individuals working for the NCA confidential as further outlined in Article V of the Constitution.</p>
-<h2 id="footnotes"><a class="header" href="#footnotes">Footnotes</a></h2>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p><a href="https://nethington.tonybark.com">Nethington</a> is another hobby project of mine in the form of micronation,</p>
-</div>
 
                     </main>
 
